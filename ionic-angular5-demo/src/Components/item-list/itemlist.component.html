@@ -1,0 +1,45 @@
+<div class="top-gap">
+  <label>UserName:</label>
+  <input class="w-value" type="text" [(ngModel)]="SelectedUser.Username">
+</div>
+
+<div class="top-gap">
+  <label>Password:</label>
+  <input class="w-value" type="text" [(ngModel)]="SelectedUser.Password">
+</div>
+
+<div class="top-gap">
+  <label>Email:</label>
+  <input class="w-value" type="text" [(ngModel)]="SelectedUser.Email">
+</div>
+
+<div class="top-gap">
+  <input type="button" (click)="UpdateSelected()" value="Update User">
+</div>
+
+<div class="top-gap">
+  <input type="button" (click)="DeleteSelected()" value="Delete User">
+</div>
+
+<div class="top-gap">
+  <input type="button" (click)="GetUsers()" value="Get Users">
+</div>
+
+<div class="top-gap">
+  <table>
+    <thead>
+      <tr>
+        <th class="l">Username</th>
+        <th class="xl">Password</th>
+        <th class="xxl">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users; let i = index" class="pointer-cursor" [class.active]="i == SelectedRow" (click)="OnSelect(user, i)">
+        <td>{{user.Username}}</td>
+        <td>{{user.Password}}</td>
+        <td>{{user.Email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

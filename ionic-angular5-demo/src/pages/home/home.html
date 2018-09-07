@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="main-body">
+    <item-list></item-list>
+  </div>
+  <input type="checkbox" [(ngModel)]="ShowAnimates"> Show Animates
+  <div *ngIf="ShowAnimates">
+    <animation-area></animation-area>
+  </div>
+</ion-content>
